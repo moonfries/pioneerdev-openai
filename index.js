@@ -2,16 +2,17 @@ import OpenAIApi from "openai";
 import express from "express";
 import bodyParser from "body-parser";
 import cors from "cors";
+import dotenv from "dotenv";
+dotenv.config();
 
 const openai = new OpenAIApi({
   organization: "org-djk1VwNbXe9onMW5t1GiLnYg",
   project: "proj_whVRzk1nMh6M0DC5VWuzw55S",
-  apiKey: "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",
+  apiKey: process.env.OPENAI_API_KEY,
 });
 
 // const configuration = new Configuration({
 //   organization: "org-djk1VwNbXe9onMW5t1GiLnYg",
-//   apiKey: "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",
 // });
 
 const app = express();
