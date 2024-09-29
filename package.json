@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -15,5 +16,12 @@
   "bugs": {
     "url": "https://github.com/moonfries/pioneerdev-openai/issues"
   },
-  "homepage": "https://github.com/moonfries/pioneerdev-openai#readme"
+  "homepage": "https://github.com/moonfries/pioneerdev-openai#readme",
+  "dependencies": {
+    "body-parser": "^1.20.3",
+    "cors": "^2.8.5",
+    "express": "^4.21.0",
+    "morgan": "^1.10.0",
+    "openai": "^4.65.0"
+  }
 }
