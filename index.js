@@ -25,17 +25,16 @@ const port = 3080;
 // })
 
 app.post('/', async (req, res) =>  {
-const response = await openai.chat.completions.create({
+  const { message } = req.body;
+  console.log(message);
+  const response = await openai.chat.completions.create({
     model: "gpt-3.5-turbo",
-    messages: [{ role: "user", content: "What is red" }],
+    messages: [{ role: "user", content:  `${message}` }],
     max_tokens: 50,
     temperature: 1,
   });
-  console.log(response.choices[0].message.content);
   res.json({
-    data: response.data
-    // data: message,
-    // message: response.choices[0].message.content,
+    message: response.choices[0].message.content,
   })
 })
 
