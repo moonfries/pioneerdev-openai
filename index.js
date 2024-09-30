@@ -11,18 +11,11 @@ const openai = new OpenAIApi({
   apiKey: process.env.OPENAI_API_KEY,
 });
 
-// const configuration = new Configuration({
-//   organization: "org-djk1VwNbXe9onMW5t1GiLnYg",
-// });
-
 const app = express();
 app.use(bodyParser.json())
 app.use(cors())
 const port = 3080;
 
-// app.get('/', (req, res) => {
-//   res.send("Hi")
-// })
 
 app.post('/', async (req, res) =>  {
   const { message } = req.body;
@@ -38,11 +31,6 @@ app.post('/', async (req, res) =>  {
   })
 })
 
-// async function pressPrompt() {
-
-// }
-
-// pressPrompt();
 
 app.listen(port, () => {
   console.log(`Example app listen:${port}`)
